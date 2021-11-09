@@ -11,11 +11,15 @@ export default function EpisodesView(): JSX.Element {
     </>
 }
 
-
 function Episode({ episode }: OneEpisodeProps): JSX.Element {
     return <>
-    <h2>{episode.name}</h2>
+    <h2>S{padSeasonOrNumber(episode.season)}E{padSeasonOrNumber(episode.number)} {episode.name}</h2>
     <img src={episode.image.medium} alt="Scene from episode" />
     <p>{episode.summary}</p>
+    <a href={episode.url}>Source</a>
     </>
+}
+
+function padSeasonOrNumber(seasonOrEpNum: number): string {
+    return seasonOrEpNum.toString().padStart(2, "0")
 }
