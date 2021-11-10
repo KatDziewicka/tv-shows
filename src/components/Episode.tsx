@@ -4,7 +4,7 @@ import IEpisode from "../utils/interface";
 type OneEpisodeProps = { episode: IEpisode };
 
 interface EpisodesViewProps {
-  episodes: IEpisode[]
+  episodes: IEpisode[];
 }
 
 export default function EpisodesView(props: EpisodesViewProps): JSX.Element {
