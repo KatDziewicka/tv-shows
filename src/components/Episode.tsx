@@ -1,10 +1,14 @@
-import episodes from "../episodes.json";
+// import episodes from "../episodes.json";
 import IEpisode from "../utils/interface";
 
 type OneEpisodeProps = { episode: IEpisode };
 
-export default function EpisodesView(): JSX.Element {
-  const episodesList = episodes.map((episode) => (
+interface EpisodesViewProps {
+  episodes: IEpisode[]
+}
+
+export default function EpisodesView(props: EpisodesViewProps): JSX.Element {
+  const episodesList = props.episodes.map((episode: IEpisode) => (
     <Episode key={episode.id} episode={episode} />
   ));
 
