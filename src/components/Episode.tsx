@@ -14,7 +14,7 @@ export default function EpisodesView(props: EpisodesViewProps): JSX.Element {
 
   return (
     <>
-      <div>{episodesList}</div>
+      <div className="episodes-display">{episodesList}</div>
     </>
   );
 }
@@ -22,13 +22,13 @@ export default function EpisodesView(props: EpisodesViewProps): JSX.Element {
 function Episode({ episode }: OneEpisodeProps): JSX.Element {
   return (
     <>
-      <h2>
+      <h2 className="episode-header">
         S{padSeasonOrNumber(episode.season)}E{padSeasonOrNumber(episode.number)}{" "}
         {episode.name}
       </h2>
-      <img src={episode.image.medium} alt="Scene from episode" />
-      <p>{trimSummary(episode.summary)}</p>
-      <a href={episode.url}>Source</a>
+      <img className="episode-image" src={episode.image.medium} alt="Scene from episode" />
+      <p className="episode-summary">{trimSummary(episode.summary)}</p>
+      <a href={episode.url} className="source-link">Source</a>
     </>
   );
 }
