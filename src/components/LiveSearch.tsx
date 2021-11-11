@@ -20,10 +20,16 @@ export default function LiveSearch(): JSX.Element {
 
   return (
     <>
-        <select className="dropdown" />
-        <input className="search-bar" type="search" onChange={(e) => setSearchTerm(e.target.value)} />
-        <p className="search-count">{filteredEpisodesList.length}/73 episodes found</p>
-        <EpisodesView episodes={filteredEpisodesList} />
+      <select className="dropdown" />
+      <input
+        className="search-bar"
+        type="search"
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <p className="search-count">
+        {filteredEpisodesList.length}/73 episodes found
+      </p>
+      <EpisodesView episodes={filteredEpisodesList} />
     </>
   );
 }

@@ -26,9 +26,15 @@ function Episode({ episode }: OneEpisodeProps): JSX.Element {
         S{padSeasonOrNumber(episode.season)}E{padSeasonOrNumber(episode.number)}{" "}
         {episode.name}
       </h2>
-      <img className="episode-image" src={episode.image.medium} alt="Scene from episode" />
+      <img
+        className="episode-image"
+        src={episode.image.medium}
+        alt="Scene from episode"
+      />
       <p className="episode-summary">{trimSummary(episode.summary)}</p>
-      <a href={episode.url} className="source-link">Source</a>
+      <a href={episode.url} className="source-link">
+        Source
+      </a>
     </>
   );
 }
